@@ -1,0 +1,65 @@
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+
+.heart {
+    background: red;
+    position: relative;
+    height: 100px;
+    width:100px;
+    /* Animation */
+    transform: rotate(-45deg) scale(1);
+    animation: pulse 2s linear infinite;
+}
+  
+  
+.heart::after {
+    /* background:blue; */
+    background:inherit;
+    border-radius: 50%; /* To make circle */
+    content:'';
+    position:absolute;
+    /* top: -100px;*/
+    top: -50%; /* Inherit properties of parent */
+    /* left: -100px; */
+    left:0;
+    height: 100px;
+    width:100px;
+}
+.heart::before {
+  /*  background:green; */
+    background:inherit; 
+    border-radius: 50%; /* To make circle */
+    content:'';
+    position:absolute;
+    top:0; 
+    right:-50%; /* Inherit properties of parent */
+    height: 100px;
+    width:100px;
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: translate(-50%, -50%) rotate(45deg) scale(1);
+  }
+  25% {
+    transform: translate(-50%, -50%) rotate(45deg) scale(1);
+  }
+  30% {
+    transform: translate(-50%, -50%) rotate(45deg) scale(1.4);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(45deg) scale(1.2);
+  }
+  70% {
+    transform: translate(-50%, -50%) rotate(45deg) scale(1.4);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(45deg) scale(1);
+  }
+}
